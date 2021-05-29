@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KonigCraft</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div id="one-block-z"></div>
+<header id="h">
+	<div id="logo-div">
+		<h1 id="logo"><i id="p-l-one">Konig</i><i id="p-l-two">Craft</i></h1>
+	</div>
+	<ul>
+		<li><a href="#one-block-z" id="a">Main</a></li>
+			<li><a href="#two-block-z" id="aa">About</a></li>
+					<li><a href="" id="aaa">Contact</a></li>			
+	</ul>
+</header>
+	
+	<div id="two-block-z"></div>
+	<section id="one-block">
+		<div id="gl-text">
+			<h1 id="title">Что такое KonigCraft?</h1>
+			<p id="subtitle">
+				KonigCraft - это новый и главное необычный сервер<br>сделанный на основе датапаков а не плагинов<br>
+				как на многих других серверах.<br>
+				Идея сервера не заставит вас скучать!<br>Приятной игры!
+			</p><br>
+			<a href="#two-block-z" id="pon">Понятно</a>
+		</div>
+		<img src="325-3252036_minecraft.png" id="im">
+	</section>
+	<section id="two-block">
+		<div id="one-div">
+			<h1 id="title-one">1.Чем интересен сервер?</h1>
+			<p id="subtitle-one">В первую очередь он
+				интересен тем что<br> он написан на датапаках, а не на плагинах.<br>Во вторых
+				на нем есть множество интересных механик.<br>Ну и в третьих это GTA сервер с элементами будущего!</p>
+		</div>
+		<div id="two-div">
+			<h1 id="title-one">2.Какова тематика сервера?</h1>
+			<p id="subtitle-one">Основной тематикой сервера являеться режим ГТА<br> с элементами будущего, которое кстати<br>
+			происходит примерно в 2100 году.<br>
+			Поэтому вы не сможете заскучать на сервере!</p>
+		</div>
+		<div id="th-div">
+			<h1 id="title-one">3.Насколько хорошая администрация?</h1>
+			<p id="subtitle-one">Наши администраторы постоянно следят за игроками<br>что бы
+			они не нарушали правила сервера<br>
+			так же наши админы быстро реагируют на<br>
+			просьбы игроков.</p>
+		</div>
+		<div id="s">
+
+		</div>
+	</section>
+	<section id="th-block">
+		<div id="one-t-div">
+			<a href="" id="ht">Instagram</a>
+		</div>
+		<div id="two-t-div">
+			<a href="" id="ht">VK</a>
+		</div>
+		<div id="two-t-div">
+			<a href="" id="ht">TELEGRAM</a>
+		</div>
+	</section>
+	<footer>
+		<h1 id="logo"><i id="p-l-oneOne">Konig</i><i id="p-l-two">Craft</i></h1>
+	</footer>
+	<script src="three.js"></script>
+	<script src="index.js"></script>
+	<script>
+let s = document.querySelector("#s");
+
+let sT = document.querySelector("#sT");
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, 150 / 150, 0.1, 1000);
+
+const renderer = new THREE.WebGLRenderer({alpha: true});
+renderer.setSize(150, 150);
+s.append(renderer.domElement);
+
+const loader = new THREE.TextureLoader();
+
+const geometry = new THREE.BoxGeometry(2, 2, 2);
+const material = new THREE.MeshBasicMaterial({
+	map: loader.load("https://yt3.ggpht.com/ytc/AAUvwnjSyIUBWLB6MZdgGIkRMtiGsmNTR1zA_AxbhwGw=s900-c-k-c0x00ffffff-no-rj")
+});
+//
+const cube = new THREE.Mesh(geometry, material);
+
+scene.add(cube);
+camera.position.z = 4;
+
+let an = function() {
+	requestAnimationFrame(an);
+	renderer.render(scene, camera);
+
+	cube.rotation.y -= 0.01;
+}
+an();
+	</script>
+</body>
+</html>
